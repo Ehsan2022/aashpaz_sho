@@ -2,11 +2,23 @@
 import 'class.dart';
 
 class Data {
-  static List<Recipe> recipes = [
+  
+  static List<Countries> countries=[
+    Countries(id: '1', name: 'غذاهای افغانی', flag:'assets/afg.jpeg' ),
+    Countries(id: '2', name: 'غذاهای ایرانی', flag:'assets/ir.jpg' ),
+    Countries(id: '3', name: 'غذاهای هندی', flag: 'assets/ind.png'),
+    Countries(id: '4', name: 'غذاهای ترکی', flag:'assets/tur.gif'),
+  ];
+
+  static List<Likes> likes=[
+
+  ];
+  
+  static List<Recipe> afghani = [
     Recipe(
         id: '1',
-        title: 'Qabuli',
-        imageUrl:
+        name: 'قابلی',
+        image:
         'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
 
         steps: [
@@ -22,8 +34,8 @@ class Data {
         ]),
     Recipe(
         id: '2',
-        title: 'Kichiri',
-        imageUrl:
+        name: 'کیچیری',
+        image:
         'https://images.unsplash.com/photo-1444418185997-1145401101e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80',
 
         steps: [
@@ -39,8 +51,8 @@ class Data {
         ]),
     Recipe(
         id: '3',
-        title: 'Manto',
-        imageUrl:
+        name: 'منتو',
+        image:
         'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
 
         steps: [
@@ -56,8 +68,8 @@ class Data {
         ]),
     Recipe(
         id: '4',
-        title: 'Ashak',
-        imageUrl:
+        name: 'آشک',
+        image:
         'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
 
         steps: [

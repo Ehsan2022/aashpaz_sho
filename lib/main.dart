@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
-  runApp( MaterialApp(
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: const Directionality( // add this
+    home: const Directionality(
+      // add this
       textDirection: TextDirection.rtl, // set this property
-      child: Directionality( // add this
+      child: Directionality(
+        // add this
         textDirection: TextDirection.rtl, // set this property
         child: Navigation(),
       ),
     ),
-  ));
+  ),);
 }
 
 class MyApp extends StatelessWidget {
