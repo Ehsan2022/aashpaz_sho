@@ -7,10 +7,10 @@ class FoodExplore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffC4DFCB),
+      color: const Color.fromARGB(142, 248, 216, 240),
       child: Center(
         child: Text(
-          "Page Number 2",
+          "به زودی ...",
           style: TextStyle(
             color: Colors.green[900],
             fontSize: 45,

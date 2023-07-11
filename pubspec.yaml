@@ -13,11 +13,12 @@ dependencies:
     sdk: flutter
   animated_splash_screen:
   carousel_slider: ^4.2.1
-  custom_navigation_bar: ^0.8.2
   bottom_navy_bar: ^6.0.0
-
-
+  hive_flutter: ^1.1.0
   cupertino_icons: ^1.0.2
+  hive: ^2.2.3
+  build_runner: ^2.4.6
+
 
 dev_dependencies:
   flutter_test:

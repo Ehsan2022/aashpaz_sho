@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+
+@HiveType(typeId: 1)
+
 class Recipe {
   String id, image, name ;
   List<String> steps;
   List<String> ingredients;
   Recipe(
       {required this.id,
+        @HiveField(0)
         required this.name,
+        @HiveField(1)
         required this.image,
         required this.steps,
         required this.ingredients,

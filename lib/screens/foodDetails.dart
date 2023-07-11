@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-
-
 import '../data/class.dart';
-import '../data/widgets.dart';
 
 class DetailsPage extends StatelessWidget {
   final Recipe recipe;
-  DetailsPage({required this.recipe});
+  const DetailsPage({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(142, 248, 216, 240),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              backgroundColor: Colors.pinkAccent,
               expandedHeight: 200.0,
               floating: false,
               pinned: true,
@@ -25,7 +24,7 @@ class DetailsPage extends StatelessWidget {
                   child: FadeInImage(
                     image: NetworkImage(recipe.image),
                     fit: BoxFit.cover,
-                    placeholder: AssetImage('assets/images/loading.gif'),
+                    placeholder: const AssetImage('assets/loading.gif'),
                   ),
                 ),
               ),
@@ -33,33 +32,24 @@ class DetailsPage extends StatelessWidget {
           ];
         },
         body: Container(
-          color: Theme.of(context).primaryColor,
-          padding: EdgeInsets.only(top: 8.0),
+          padding: const EdgeInsets.only(top: 8.0),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: <Widget>[
-                Text('Nutrition',
+                const Text('ترکیبات',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
-
-                Divider(color: Colors.white, endIndent: 40.0, indent: 40.0),
-                Text('Ingredients',
-                    style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 20)),
                 IngredientsWidget(
                   ingredients: recipe.ingredients,
                 ),
-                Divider(color: Colors.white, endIndent: 40.0, indent: 40.0),
-                Text('Steps',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
+                const Divider(
+                    color: Colors.black, endIndent: 40.0, indent: 40.0),
+                const Text('طرز پخت',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 RecipeSteps(
                   steps: recipe.steps,
                 )
@@ -74,7 +64,7 @@ class DetailsPage extends StatelessWidget {
 
 class RecipeSteps extends StatelessWidget {
   final List<String> steps;
-  RecipeSteps({this.steps = const []});
+  const RecipeSteps({super.key, this.steps = const []});
 
   @override
   Widget build(BuildContext context) {
@@ -82,19 +72,19 @@ class RecipeSteps extends StatelessWidget {
       itemCount: steps.length,
       padding: const EdgeInsets.all(0.0),
       shrinkWrap: true,
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Theme.of(context).accentColor,
+            trailing: CircleAvatar(
+              backgroundColor:  const Color.fromARGB(255, 153, 213, 238),
               child: Text('${index + 1}',
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold)),
             ),
             title: Text(steps[index],
-                style: TextStyle(
-                    color: Colors.white,
+                style: const TextStyle(
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16)));
       },
@@ -104,54 +94,36 @@ class RecipeSteps extends StatelessWidget {
 
 class IngredientsWidget extends StatelessWidget {
   final List<String>? ingredients;
-  IngredientsWidget({this.ingredients});
+  const IngredientsWidget({super.key, this.ingredients});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 170,
       width: double.infinity,
       child: ListView.builder(
         itemCount: ingredients!.length,
         shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(5.0),
             child: Chip(
-              backgroundColor: Theme.of(context).accentColor,
-              label: Text(ingredients![index],
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
+
+              backgroundColor: const Color.fromARGB(255, 153, 213, 238),
+              label: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    ingredients![index],
+                    style: const TextStyle(color: Colors.black, fontSize: 16),
+                  ),
+                  Text(" : ${index + 1}"),
+                ],
+              ),
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class NutritionWidget extends StatelessWidget {
-  final List<Nutrients>? nutrients;
-  NutritionWidget({this.nutrients});
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 86,
-      width: double.infinity,
-      child: Center(
-        child: ListView.builder(
-          itemCount: nutrients!.length,
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          physics: BouncingScrollPhysics(),
-          itemBuilder: (BuildContext context, int index) {
-            return CircleIndicator(
-              percent: nutrients![index].percent,
-            );
-          },
-        ),
       ),
     );
   }

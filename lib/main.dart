@@ -1,21 +1,36 @@
+import 'package:aashpaz_sho/data/class.dart';
+import 'package:aashpaz_sho/data/data.dart';
 import 'package:aashpaz_sho/navigator.dart';
+import 'package:aashpaz_sho/screens/about.dart';
+import 'package:aashpaz_sho/screens/favorites.dart';
 import 'package:aashpaz_sho/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: const Directionality(
-      // add this
-      textDirection: TextDirection.rtl, // set this property
-      child: Directionality(
+const String FAVORITES_BOX = "favorites";
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox(FAVORITES_BOX);
+
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const Directionality(
         // add this
         textDirection: TextDirection.rtl, // set this property
-        child: Navigation(),
+        child: Directionality(
+          // add this
+          textDirection: TextDirection.rtl, // set this property
+          child: Navigation(),
+        ),
       ),
+      routes: {
+        'about': (_) => const About(),
+      },
     ),
-  ),);
+  );
 }
 
 class MyApp extends StatelessWidget {

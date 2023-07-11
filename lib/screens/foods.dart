@@ -1,119 +1,70 @@
 import 'package:aashpaz_sho/data/class.dart';
 import 'package:aashpaz_sho/data/data.dart';
+import 'package:aashpaz_sho/main.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 
 import 'foodDetails.dart';
 
-
 class Foods extends StatefulWidget {
-  const Foods({Key? key}) : super(key: key);
+  final List<Recipe> recipes;
+
+  const Foods({super.key, required this.recipes});
 
   @override
   State<Foods> createState() => _FoodsState();
 }
 
 class _FoodsState extends State<Foods> {
-  double screenHeight = 0;
-  double screenWidth = 0;
-
-  bool startAnimation = false;
-
- 
-  @override
-  void initState() {
-    super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      setState(() {
-        startAnimation = true;
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    screenHeight = MediaQuery.of(context).size.height;
-    screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.pinkAccent,),
-      backgroundColor: const Color(0xFF222431),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(
-            horizontal: screenWidth / 20,
-          ),
-          child: Column(
-            children: [
-              const SizedBox(height: 30,),
-              GestureDetector(
-                onTap: () {
-                  // Future.delayed(const Duration(milliseconds: 500), () {
-                  //   setState(() {
-                  //     startAnimation = true;
-                  //   });
-                  // });
-                },
-              ),
-              const SizedBox(height: 40,),
-              ListView.builder(
+        appBar: AppBar(
+          backgroundColor: Colors.pinkAccent,
+        ),
+        backgroundColor: const Color(0xFF222431),
+        body: Column(
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView.separated(
                 primary: false,
                 shrinkWrap: true,
-                itemCount: Data.countries.length,
-                itemBuilder: (context, index) {
-                  return item(index);
-                },
-              ),
-              const SizedBox(height: 50,),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget item(int index) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(recipe: Data.afghani[index]),));
-          });
-        },
-        child: AnimatedContainer(
-          height: 55,
-          width: screenWidth,
-          curve: Curves.easeInOut,
-          duration: Duration(milliseconds: 300 + (index * 200)),
-          transform: Matrix4.translationValues(startAnimation ? 0 : screenWidth, 0, 0),
-          margin: const EdgeInsets.only(
-            bottom: 12,
-          ),
-          padding: EdgeInsets.symmetric(
-            horizontal: screenWidth / 20,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-               Data.afghani[index].name,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+                itemCount: widget.recipes.length,
+                itemBuilder: (context, index) => ListTile(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  tileColor: Colors.white,
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsPage(recipe: widget.recipes[index]),
+                        ));
+                  },
+                  leading: IconButton(
+                      onPressed: () async{
+                        var box = Hive.box(FAVORITES_BOX);
+                        box.put("favs",widget.recipes );
+                        print('hiiiiiiiiiiiiiiiiiiiiiiiiii');
+                      }, icon: const Icon(Icons.favorite_border)),
+                  trailing: Image.network(widget.recipes[index].image),
+                  title: Center(child: Text(widget.recipes[index].name)),
+                ),
+                separatorBuilder: (context, index) => const Divider(
+                  height: 20,
+                  color: Colors.white,
+                  indent: 20,
+                  endIndent: 20,
                 ),
               ),
-              Image.network(Data.afghani[index].image,),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          ],
+        ));
   }
-
 }
