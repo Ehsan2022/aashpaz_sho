@@ -1,16 +1,23 @@
-# aashpaz_sho
+🍲 Aashpaz Sho
 
-A new Flutter project.
+Asshpaz Sho is a Flutter mobile app that lets users explore foods from different countries. Users can view details, like/favorite dishes, and discover more cuisines.
 
-## Getting Started
+✨ Features
 
-This project is a starting point for a Flutter application.
+🌍 Explore foods from multiple countries
 
-A few resources to get you started if this is your first Flutter project:
+📝 View details about each dish
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+❤️ Like & save favorites
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🔎 Discover and explore more foods
+
+📱 Clean and responsive Flutter UI
+
+🚀 Tech Stack
+
+Framework: Flutter (Dart)
+
+UI: Material Design
+
+Data: Static JSON / API-ready structure
