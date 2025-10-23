@@ -8,11 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:hive_flutter/adapters.dart';
 
-const String FAVORITES_BOX = "favorites";
+const String RecipeBok = "favorites";
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox(FAVORITES_BOX);
+  Hive.registerAdapter(RecipeAdapter());
+  await Hive.openBox<Recipe>(RecipeBok);
 
   runApp(
     MaterialApp(

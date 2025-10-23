@@ -1,311 +1,147 @@
-
 import 'class.dart';
 
 class Data {
-  
-  static List<Countries> countries=[
-    Countries(id: '1', name: 'غذاهای افغانی', flag:'assets/afg.jpeg' ),
-    Countries(id: '2', name: 'غذاهای ایرانی', flag:'assets/ir.jpg' ),
+  static List<Countries> countries = [
+    Countries(id: '1', name: 'غذاهای افغانی', flag: 'assets/afg.jpeg'),
+    Countries(id: '2', name: 'غذاهای ایرانی', flag: 'assets/ir.jpg'),
     Countries(id: '3', name: 'غذاهای هندی', flag: 'assets/ind.png'),
-    Countries(id: '4', name: 'غذاهای ترکی', flag:'assets/tur.gif'),
+    Countries(id: '4', name: 'غذاهای ترکی', flag: 'assets/tur.gif'),
   ];
-  
+
   static List<Recipe> afghani = [
     Recipe(
-        id: '1',
-        name: 'قابلی',
-        image:
-        'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-
+        id: '1', name: 'قابلی',
+        image: 'assets/qabuli.png',
         steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
+      ' برنج به مقدار لازم را داخل',
+      ' دیگ ریخته و آب اضافه می کنیم',
+      'گوشت گوسفند را تفت داده بعدا ادویه',
+      ' های ضروری را اضافه میکنیم',
+      'کشمش به مقدار لازم را همراه با',
+      ' جلال های زردک سرخ میکنیم',
+      'در آخر همه را با هم یکجا نموده ',
+      'و نوش جان میکنیم '
+    ],
         ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+      'برنج',
+      'گوشت',
+      'روغن',
+      'کشمش',
+      'زردک زرد',
+    ]),
     Recipe(
         id: '2',
         name: 'کیچیری',
-        image:
-        'https://images.unsplash.com/photo-1444418185997-1145401101e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/kechiri.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
         id: '3',
         name: 'منتو',
-        image:
-        'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/manto.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
         id: '4',
         name: 'آشک',
-        image:
-        'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/ashak.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
   ];
 
   static List<Recipe> irani = [
     Recipe(
-        id: '1',
-        name: 'قورمه سبزی',
-        image:
-        'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
-    Recipe(
-        id: '2',
-        name: 'کشک بادمجون',
-        image:
-        'https://images.unsplash.com/photo-1444418185997-1145401101e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
-    Recipe(
-        id: '3',
+        id: '5',
         name: 'حلیم',
-        image:
-        'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/halim.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
-        id: '4',
+        id: '6',
         name: 'جوجه',
-        image:
-        'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/joje.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
+    Recipe(
+        id: '7',
+        name: 'قورمه سبزی',
+        image: 'assets/qormeSabzi.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
+    Recipe(
+        id: '8',
+        name: 'کشک بادمجون',
+        image: 'assets/kashk.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
   ];
 
   static List<Recipe> hindi = [
     Recipe(
-        id: '1',
-        name: 'کرایی',
-        image:
-        'https://cdn.parsine.com/files/fa/news/1399/9/24/1176169_957.jpg',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-'روغن زیتون: ۳ قاشق غذاخوری',
-'پیاز ریز خرد شده: ۱ عدد',
-'فلفل دلمه: نصف یک عدد',
-'زنجبیل رنده شده: ۵ قاشق غذاخوری',
-'سیر خرد شده: ۲ قاشق غذاخوری',
-'ران مرغ بدون پوست و بدون استخوان: ۴ عدد',
-'گوجه فرنگی خرد شده: ۱/۵ لیوان',
-'زیره آسیاب شده: ۱ قاشق چایخوری',
-'تخم گشنیز آسیاب شده: ۱ قاشق چایخوری',
-'ادویه گرام ماسالا: ۱ قاشق چایخوری',
-'پودر چیلی قرمز: ۱ قاشق غذاخوری',
-'پودر زردچوبه: نصف قاشق مرباخوری',
-'نمک: به مقدار لازم',
-'گشنیز خرد شده: ۱/۴ لیوان '      ,
-        ]
-    ),
-    Recipe(
-        id: '2',
+        id: '9',
         name: 'بریانی',
-        image:
-        'https://images.unsplash.com/photo-1444418185997-1145401101e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/baryani.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
+    Recipe(id: '10', name: 'کرایی', image: 'assets/karaie2.jpeg', steps: [
+      'مرحله اول',
+      'مرحله دوم',
+      'مرحله سوم',
+      'مرحله آخر'
+    ], ingredients: [
+      'روغن زیتون: ۳ قاشق غذاخوری',
+      'پیاز ریز خرد شده: ۱ عدد',
+      'فلفل دلمه: نصف یک عدد',
+      'زنجبیل رنده شده: ۵ قاشق غذاخوری',
+      'سیر خرد شده: ۲ قاشق غذاخوری',
+      'ران مرغ بدون پوست و بدون استخوان: ۴ عدد',
+      'گوجه فرنگی خرد شده: ۱/۵ لیوان',
+      'زیره آسیاب شده: ۱ قاشق چایخوری',
+      'تخم گشنیز آسیاب شده: ۱ قاشق چایخوری',
+      'ادویه گرام ماسالا: ۱ قاشق چایخوری',
+      'پودر چیلی قرمز: ۱ قاشق غذاخوری',
+      'پودر زردچوبه: نصف قاشق مرباخوری',
+      'نمک: به مقدار لازم',
+      'گشنیز خرد شده: ۱/۴ لیوان ',
+    ]),
     Recipe(
-        id: '3',
+        id: '11',
         name: 'دال',
-        image:
-        'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/dal.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
-        id: '4',
+        id: '12',
         name: 'پانی پوری',
-        image:
-        'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/panipuri.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
   ];
 
   static List<Recipe> turkey = [
     Recipe(
-        id: '1',
+        id: '13',
         name: 'دونر کباب',
-        image:
-        'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/doner.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
-        id: '2',
+        id: '14',
         name: 'لاهماجون',
-        image:
-        'https://images.unsplash.com/photo-1444418185997-1145401101e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/lahmajon.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
-        id: '3',
+        id: '15',
         name: 'دلمه',
-        image:
-        'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/dolme.jpg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
     Recipe(
-        id: '4',
+        id: '16',
         name: 'بورک',
-        image:
-        'https://flightio.com/wp-asli/wp-content/uploads/2022/09/Borek.jpg',
-
-        steps: [
-          'Gather the ingredients.',
-          'Pull a double shot of espresso into a cappuccino cup.',
-          'Foam the milk to double its original volume.'
-              'Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known.',
-          'Serve immediately.'
-        ],
-        ingredients: [
-          '2 shots espresso (a double shot)',
-          '4 ounces milk'
-        ]),
+        image: 'assets/borak.jpeg',
+        steps: ['مرحله اول', 'مرحله دوم', 'مرحله سوم', 'مرحله آخر'],
+        ingredients: ['ترکیبات آزمایشی اول', 'ترکیاب آزمایشی دوم']),
   ];
-
 }
-

@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(142, 248, 216, 240),
+        backgroundColor: const Color.fromARGB(255, 16, 48, 63),
         body: Column(
           children: <Widget>[
             CarouselSlider(
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.symmetric(horizontal: 5.0),
+                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: Image.network(
                             Data.afghani[i].image,
                             fit: BoxFit.fitWidth,
@@ -53,10 +53,13 @@ class _HomePageState extends State<HomePage> {
                 );
               }).toList(),
             ),
-            Center(
+            const Center(
                 child: Text(
               'غذا ها',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             )),
             Expanded(
               child: Padding(
@@ -68,7 +71,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) => GridTile(
-                    footer: Center(child: Text(Data.countries[index].name)),
+                    footer: Center(
+                        child: Text(
+                      Data.countries[index].name,
+                      style: const TextStyle(color: Colors.white),
+                    )),
                     child: GestureDetector(
                       child: Image.network(Data.countries[index].flag),
                       onTap: () {

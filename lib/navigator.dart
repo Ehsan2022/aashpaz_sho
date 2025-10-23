@@ -17,7 +17,9 @@ class _NavigationState extends State<Navigation> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    Favorites(),
+    const Favorites(
+
+    ),
     const FoodExplore(),
   ];
 
@@ -26,14 +28,14 @@ class _NavigationState extends State<Navigation> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(" آشپز شو "),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: const Color.fromARGB(255, 34, 138, 86),
         actions: [
           PopupMenuButton(
               itemBuilder: (cont) => [
-                     const PopupMenuItem(
+                    const PopupMenuItem(
                       child: Text('اشتراک'),
                     ),
-                     PopupMenuItem(
+                    PopupMenuItem(
                       child: const Text('درباره'),
                       onTap: () {
                         Navigator.pushNamed(context, 'about');
@@ -47,10 +49,15 @@ class _NavigationState extends State<Navigation> {
         ],
       ),
       bottomNavigationBar: BottomNavyBar(
+
+        showElevation: true,
+        iconSize: 30,
+        itemCornerRadius: 10,
         animationDuration: const Duration(milliseconds: 200),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: const Color.fromARGB(255, 34, 138, 86),
         selectedIndex: _pageIndex,
         onItemSelected: (i) {
+
           setState(() {
             _pageIndex = i;
           });
